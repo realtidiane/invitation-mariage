@@ -2,19 +2,22 @@
 * text=auto eol=lf
 
 # Fichiers binaires (ne jamais toucher)
-*.mp4 binary
-*.mp3 binary
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.woff binary
-*.woff2 binary
-*.ttf binary
-*.otf binary
-
-# Polices : forcer LF (certaines polices ont des tables de checksum sensibles)
-*.woff  text eol=lf
-*.woff2 text eol=lf
+*.mp4    binary
+*.mp3    binary
+*.ogg    binary
+*.wav    binary
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.webp   binary
+*.ico    binary
+*.pdf    binary
+*.woff   binary
+*.woff2  binary
+*.ttf    binary
+*.otf    binary
+*.eot    binary
 
 # CSS et JS : forcer LF
 *.css  text eol=lf
@@ -24,3 +27,4 @@
 *.md   text eol=lf
 *.py   text eol=lf
 *.svg  text eol=lf
+*.txt  text eol=lf
