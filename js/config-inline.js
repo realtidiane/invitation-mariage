@@ -1,0 +1,189 @@
+/* ==========================================================================
+   Configuration inlinee de l'invitation.
+   --------------------------------------------------------------------------
+   Fichier GENERE automatiquement par tools/inline_config.py a partir de
+   config.json. Ne pas editer a la main : toute modification doit etre faite
+   dans config.json, puis ce script doit etre relance.
+
+   But : permettre l'ouverture de index.html en file:// (double-clic), ou le
+   navigateur interdit fetch() sur un fichier local. En mode serveur HTTP,
+   app.js lit config.json directement et cette copie n'est pas utilisee.
+   ========================================================================== */
+
+window.__INVITATION_CONFIG__ = {
+  "_comment": "Fichier de configuration unique de l'invitation. Toutes les donnees en dur du site d'origine (noms, date, programme, lieu, lien Maps, chemins des medias) sont ici. Modifier CE SEUL fichier suffit a personnaliser l'invitation.",
+  "_usage": "Au runtime, js/app.js charge ce fichier et applique les valeurs sur la page. Pour figer le resultat dans index.html (HTML statique), lancer : python tools/build_site.py",
+  "meta": {
+    "title": "Jérôme & Mélissa — Notre mariage",
+    "lang": "fr",
+    "themeColor": "#efdcd5"
+  },
+  "couple": {
+    "partnerOne": "Jérôme",
+    "partnerTwo": "Mélissa",
+    "separator": "&",
+    "signature": "Jérôme & Mélissa",
+    "ariaNames": "Jérôme et Mélissa"
+  },
+  "event": {
+    "dateISO": "2027-09-27",
+    "dateDisplay": "27.09.27",
+    "dateLong": "27 septembre 2027",
+    "countdownTarget": "2027-09-27T15:00:00-04:00",
+    "countdownLabels": [
+      "JOURS",
+      "HEURES",
+      "MINUTES",
+      "SECONDES"
+    ],
+    "countdownTitle": "La célébration commence dans"
+  },
+  "hero": {
+    "eyebrow": "Wedding Day",
+    "scrollHint": "Faites défiler",
+    "scrollArrow": "⌄",
+    "ariaLabel": "Nous nous marions, le 27 septembre 2027, Jérôme et Mélissa",
+    "videoAriaLabel": "Jardin animé avec deux cygnes formant un cœur"
+  },
+  "opening": {
+    "videoAriaLabel": "Animation d’ouverture de l’enveloppe de Jérôme et Mélissa",
+    "openButtonAriaLabel": "Ouvrir l’invitation de Jérôme et Mélissa",
+    "skipLabel": "Passer l’animation",
+    "statusLoading": "Le chargement prend un instant. Vous pouvez passer l’animation.",
+    "statusUnavailable": "L’animation est indisponible. Vous pouvez ouvrir la carte directement.",
+    "statusRetry": "Touchez l’enveloppe pour réessayer, ou passez l’animation.",
+    "revealDurationMs": 550,
+    "blendStartSeconds": 2.3,
+    "blendEndSeconds": 3.3,
+    "watchdogMs": 8000
+  },
+  "intro": {
+    "quoteLines": [
+      "Deux âmes",
+      "Une destinée",
+      "Toute une vie à écrire ensemble"
+    ],
+    "greeting": "Chères familles, chers amis,",
+    "body": "Rejoignez-nous pour une journée d’amour, de rires et de souvenirs inoubliables, alors que commence notre nouvelle vie."
+  },
+  "program": {
+    "title": "Le programme",
+    "events": [
+      {
+        "time": "15 h",
+        "label": "Accueil<br>des invités"
+      },
+      {
+        "time": "16 h",
+        "label": "La cérémonie"
+      },
+      {
+        "time": "17 h",
+        "label": "Le cocktail"
+      },
+      {
+        "time": "19 h",
+        "label": "Le dîner"
+      },
+      {
+        "time": "21 h",
+        "label": "La soirée<br>dansante"
+      }
+    ]
+  },
+  "venue": {
+    "title": "Le lieu",
+    "ornament": "❦",
+    "name": "Le Jardin des Roses",
+    "tagline": [
+      "Un écrin de verdure",
+      "pour célébrer notre amour."
+    ],
+    "note": "Lieu de démonstration · adresse à confirmer",
+    "mapsUrl": "https://www.google.com/maps/search/jardin+botanique+Montreal",
+    "mapsLabel": "Voir l’itinéraire ↗"
+  },
+  "details": {
+    "dressTitle": "Une touche d’élégance",
+    "dressText": [
+      "Une tenue de fête, des couleurs douces",
+      "et votre plus beau sourire."
+    ],
+    "giftTitle": "Le plus beau des cadeaux",
+    "giftText": [
+      "Votre présence à nos côtés",
+      "est notre plus grand bonheur."
+    ]
+  },
+  "attendance": {
+    "title": "Confirmez votre présence",
+    "intro": [
+      "Pour préparer cette belle journée,",
+      "faites-nous savoir si vous serez des nôtres."
+    ],
+    "buttonLabel": "RSVP",
+    "clickCaption": "Cliquez pour ouvrir",
+    "closingMessage": "Nous avons hâte de vous retrouver !",
+    "photoAlt": "Portrait illustratif d’un couple africain fictif dans un jardin"
+  },
+  "dialog": {
+    "title": "Votre réponse",
+    "note": "Démonstration : réponse enregistrée sur cet appareil uniquement.",
+    "nameLabel": "Votre nom et prénom",
+    "attendanceLabel": "Serez-vous présent(e) ?",
+    "attendanceYes": "Avec grand plaisir !",
+    "attendanceNo": "Malheureusement, je ne pourrai pas venir",
+    "guestsLabel": "Nombre de personnes, vous compris(e)",
+    "guestsMin": 1,
+    "guestsMax": 12,
+    "guestsValue": 1,
+    "songLabel": "Une chanson pour vous faire danser ?",
+    "messageLabel": "Un petit mot pour les mariés",
+    "submitLabel": "Enregistrer ma réponse",
+    "closeAriaLabel": "Fermer",
+    "successOrnament": "❦",
+    "successTitle": "Merci pour votre petit mot",
+    "successBody": "Votre réponse de démonstration est enregistrée sur cet appareil.",
+    "successDoneLabel": "Revenir à l’invitation",
+    "storageKey": "jm-rsvp",
+    "storageError": "Le stockage local est indisponible dans ce navigateur. Votre réponse n’a pas été enregistrée."
+  },
+  "footer": {
+    "note": "Invitation de démonstration · 27 septembre 2027",
+    "replayLabel": "Revoir l’ouverture de l’enveloppe"
+  },
+  "sound": {
+    "ariaLabelOff": "Activer la musique",
+    "ariaLabelOn": "Couper la musique",
+    "iconOff": "🔇",
+    "iconOn": "🔊",
+    "volume": 0.55
+  },
+  "assets": {
+    "openingVideo": "assets/opening-mobile.mp4",
+    "openingPoster": "assets/envelope-poster.jpg",
+    "interiorVideo": "assets/interior-mobile.mp4?v=7",
+    "interiorPoster": "assets/interior-poster.jpg",
+    "music": "assets/music-from-36.mp3",
+    "timelineRose": "assets/timeline-rose.png",
+    "couplePhoto": "assets/couple-africain.png",
+    "garden": "assets/garden.png",
+    "paperGrain": "assets/paper-grain.svg",
+    "envelopeRealistic": "assets/envelope-realistic.png",
+    "floralCorner": "assets/floral-corner.png",
+    "fonts": {
+      "BeauRivage": {
+        "src": "assets/fonts/beau-rivage.woff",
+        "format": "woff"
+      },
+      "ImperialScript": {
+        "src": "assets/fonts/imperial-script.woff",
+        "format": "woff"
+      },
+      "Ovo": {
+        "src": "assets/fonts/ovo.woff2",
+        "format": "woff2"
+      }
+    }
+  }
+};

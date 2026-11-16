@@ -1,0 +1,26 @@
+# Dependances Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node (utilise uniquement pour les outils de verification locaux)
+node_modules/
+package-lock.json
+
+# Systeme / OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editeurs
+.vscode/
+.idea/
+*.swp
+*~
+
+# Fichiers de travail locaux
+*.log
+*.tmp
+.env
+.env.local

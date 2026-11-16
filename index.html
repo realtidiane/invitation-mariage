@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#efdcd5" data-cfg-attr="content:meta.themeColor">
+  <title data-cfg="meta.title">Jérôme &amp; Mélissa — Notre mariage</title>
+  <!-- Favicon inline (SVG data URI) : evite la requete /favicon.ico en 404. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23f8efdf'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23ad842f'%3E%E2%9D%A6%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="locked">
+
+  <!-- ======================================================================
+       OUVERTURE : overlay video de l'enveloppe.
+       Tant que #invitation porte l'attribut "inert", le contenu reste
+       inaccessible (clavier + lecteurs d'ecran) ; l'overlay est masque par
+       .is-revealed a la fin de la sequence de transition.
+       ====================================================================== -->
+  <div class="video-envelope" id="envelope">
+    <div class="opening-stage">
+      <video id="opening-video"
+             preload="auto"
+             muted
+             playsinline
+             webkit-playsinline
+             poster="assets/envelope-poster.jpg"
+             data-cfg-attr="poster:assets.openingPoster"
+             aria-label="Animation d’ouverture de l’enveloppe de Jérôme et Mélissa"
+             data-cfg-attr="aria-label:opening.videoAriaLabel">
+        <source src="assets/opening-mobile.mp4" type="video/mp4"
+                data-cfg-attr="src:assets.openingVideo">
+      </video>
+      <button id="open"
+              class="video-open"
+              aria-label="Ouvrir l’invitation de Jérôme et Mélissa"
+              data-cfg-attr="aria-label:opening.openButtonAriaLabel"></button>
+      <p class="opening-status" id="opening-status" role="status" hidden></p>
+      <button id="skip-opening" class="skip-opening" hidden
+              data-cfg="opening.skipLabel">Passer l’animation</button>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       INVITATION : 7 sections + pied de page.
+       ====================================================================== -->
+  <main id="invitation" inert>
+
+    <!-- 1. HERO : video de fond + prenoms -->
+    <section class="hero card-hero"
+             aria-label="Nous nous marions, le 27 septembre 2027, Jérôme et Mélissa"
+             data-cfg-attr="aria-label:hero.ariaLabel">
+      <video class="invitation-art"
+             id="interior-video"
+             src="assets/interior-mobile.mp4?v=7"
+             data-cfg-attr="src:assets.interiorVideo"
+             muted
+             playsinline
+             loop
+             preload="auto"
+             poster="assets/interior-poster.jpg"
+             data-cfg-attr="poster:assets.interiorPoster"
+             aria-label="Jardin animé avec deux cygnes formant un cœur"
+             data-cfg-attr="aria-label:hero.videoAriaLabel"></video>
+      <div class="interior-heading">
+        <span data-cfg="hero.eyebrow">Wedding Day</span>
+        <time datetime="2027-09-27" data-cfg-attr="datetime:event.dateISO" data-cfg="event.dateDisplay">27.09.27</time>
+      </div>
+      <div class="interior-names" aria-label="Jérôme et Mélissa"
+           data-cfg-attr="aria-label:couple.ariaNames">
+        <span data-cfg="couple.partnerOne">Jérôme</span>
+        <small data-cfg="couple.separator">&amp;</small>
+        <span data-cfg="couple.partnerTwo">Mélissa</span>
+      </div>
+      <div class="interior-scroll">
+        <span data-cfg="hero.scrollHint">Faites défiler</span>
+        <b data-cfg="hero.scrollArrow">⌄</b>
+      </div>
+    </section>
+
+    <!-- 2. INTRODUCTION : poeme d'accueil -->
+    <section class="section intro paper-panel">
+      <div class="reveal">
+        <p class="quote" data-cfg-html="intro.quoteLines">Deux âmes<br>Une destinée<br>Toute une vie à écrire ensemble</p>
+        <p class="welcome" data-cfg="intro.greeting">Chères familles, chers amis,</p>
+        <p data-cfg="intro.body">Rejoignez-nous pour une journée d’amour, de rires et de souvenirs inoubliables, alors que commence notre nouvelle vie.</p>
+      </div>
+    </section>
+
+    <!-- 3. COMPTE A REBOURS -->
+    <section class="section countdown-section">
+      <div class="reveal">
+        <h2 class="script" data-cfg="event.countdownTitle">La célébration commence dans</h2>
+        <div class="count" id="count" aria-label="Compte à rebours du mariage"></div>
+      </div>
+    </section>
+
+    <!-- 4. PROGRAMME : timeline 15h -> 21h -->
+    <section class="section schedule-section paper-panel">
+      <div class="reveal">
+        <h2 class="script ornament-title" data-cfg="program.title">Le programme</h2>
+        <div class="timeline" id="timeline" data-cfg-list="program.events">
+          <img class="timeline-rose" src="assets/timeline-rose.png" alt="" aria-hidden="true"
+               data-cfg-attr="src:assets.timelineRose">
+          <div class="event">
+            <time>15 h</time>
+            <i></i>
+            <span>Accueil<br>des invités</span>
+          </div>
+          <div class="event">
+            <time>16 h</time>
+            <i></i>
+            <span>La cérémonie</span>
+          </div>
+          <div class="event">
+            <time>17 h</time>
+            <i></i>
+            <span>Le cocktail</span>
+          </div>
+          <div class="event">
+            <time>19 h</time>
+            <i></i>
+            <span>Le dîner</span>
+          </div>
+          <div class="event">
+            <time>21 h</time>
+            <i></i>
+            <span>La soirée<br>dansante</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. LIEU -->
+    <section class="section venue-section">
+      <div class="reveal">
+        <h2 class="script" data-cfg="venue.title">Le lieu</h2>
+        <span class="gold-flourish" data-cfg="venue.ornament">❦</span>
+        <p class="venue" data-cfg="venue.name">Le Jardin des Roses</p>
+        <p data-cfg-html="venue.tagline">Un écrin de verdure<br>pour célébrer notre amour.</p>
+        <p class="demo" data-cfg="venue.note">Lieu de démonstration · adresse à confirmer</p>
+        <div class="venue-art" aria-hidden="true">
+          <svg viewBox="0 0 340 170" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M15 151h310M35 147V70h270v77M48 70V49h244v21M72 49V35h196v14M125 35q45-56 90 0M170 7v-7M117 147V84h106v63M137 147V98q33-38 66 0v49M54 142V87h36v55M250 142V87h36v55M54 105h36M250 105h36M48 58h244M36 77h268M25 151l10-8h270l10 8M148 147v-42M192 147v-42M102 147V79M238 147V79M36 65l12-5M304 65l-12-5"/>
+            <path d="M11 153q0-34 13-35 14 2 13 35M303 153q0-34 13-35 14 2 13 35"/>
+          </svg>
+        </div>
+        <a class="location-link"
+           href="https://www.google.com/maps/search/jardin+botanique+Montreal"
+           data-cfg-attr="href:venue.mapsUrl"
+           target="_blank"
+           rel="noopener"
+           data-cfg="venue.mapsLabel">Voir l’itinéraire ↗</a>
+      </div>
+    </section>
+
+    <!-- 6. TENUE + CADEAU -->
+    <section class="section details-section paper-panel floral-panel">
+      <div class="reveal">
+        <h2 class="script" data-cfg="details.dressTitle">Une touche d’élégance</h2>
+        <p data-cfg-html="details.dressText">Une tenue de fête, des couleurs douces<br>et votre plus beau sourire.</p>
+        <h2 class="script gift-title" data-cfg="details.giftTitle">Le plus beau des cadeaux</h2>
+        <p data-cfg-html="details.giftText">Votre présence à nos côtés<br>est notre plus grand bonheur.</p>
+      </div>
+    </section>
+
+    <!-- 7. RSVP + PHOTO DU COUPLE -->
+    <section class="section attendance-section">
+      <div class="reveal">
+        <h2 class="script" data-cfg="attendance.title">Confirmez votre présence</h2>
+        <p data-cfg-html="attendance.intro">Pour préparer cette belle journée,<br>faites-nous savoir si vous serez des nôtres.</p>
+        <button class="seal rsvp" id="rsvp" aria-label="Confirmer votre présence"
+                data-cfg-attr="aria-label:attendance.buttonLabel"
+                data-cfg="attendance.buttonLabel">RSVP</button>
+        <p class="script click-caption" data-cfg="attendance.clickCaption">Cliquez pour ouvrir</p>
+        <p class="script closing-message" data-cfg="attendance.closingMessage">Nous avons hâte de vous retrouver !</p>
+        <p class="couple-signature" data-cfg="couple.signature">Jérôme &amp; Mélissa</p>
+        <figure class="couple-photo">
+          <img src="assets/couple-africain.png"
+               data-cfg-attr="src:assets.couplePhoto"
+               alt="Portrait illustratif d’un couple africain fictif dans un jardin"
+               data-cfg-attr="alt:attendance.photoAlt"
+               loading="lazy" width="1024" height="1536">
+        </figure>
+        <div class="closing-flowers" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="demo" data-cfg="footer.note">Invitation de démonstration · 27 septembre 2027</p>
+      <button class="replay" id="replay" data-cfg="footer.replayLabel">Revoir l’ouverture de l’enveloppe</button>
+    </footer>
+  </main>
+
+  <!-- ======================================================================
+       MODALE RSVP (balise native <dialog>)
+       ====================================================================== -->
+  <dialog id="dialog">
+    <button class="close" id="close" aria-label="Fermer"
+            data-cfg-attr="aria-label:dialog.closeAriaLabel">×</button>
+    <h2 class="script" data-cfg="dialog.title">Votre réponse</h2>
+    <p class="demo" style="text-align:center" data-cfg="dialog.note">Démonstration : réponse enregistrée sur cet appareil uniquement.</p>
+
+    <form id="form">
+      <label for="name" data-cfg="dialog.nameLabel">Votre nom et prénom</label>
+      <input id="name" name="name" autocomplete="name" required>
+
+      <label for="attendance" data-cfg="dialog.attendanceLabel">Serez-vous présent(e) ?</label>
+      <select id="attendance" name="attendance">
+        <option value="yes" data-cfg="dialog.attendanceYes">Avec grand plaisir !</option>
+        <option value="no" data-cfg="dialog.attendanceNo">Malheureusement, je ne pourrai pas venir</option>
+      </select>
+
+      <label for="guests" data-cfg="dialog.guestsLabel">Nombre de personnes, vous compris(e)</label>
+      <input id="guests" name="guests" type="number" min="1" max="12" value="1" required
+             data-cfg-attr="min:dialog.guestsMin"
+             data-cfg-attr="max:dialog.guestsMax"
+             data-cfg-attr="value:dialog.guestsValue">
+
+      <label for="song" data-cfg="dialog.songLabel">Une chanson pour vous faire danser ?</label>
+      <input id="song" name="song">
+
+      <label for="message" data-cfg="dialog.messageLabel">Un petit mot pour les mariés</label>
+      <textarea id="message" name="message"></textarea>
+
+      <button class="submit" type="submit" data-cfg="dialog.submitLabel">Enregistrer ma réponse</button>
+    </form>
+
+    <div class="success" id="success" hidden>
+      <span class="ornament" data-cfg="dialog.successOrnament">❦</span>
+      <h2 class="script" data-cfg="dialog.successTitle">Merci pour votre petit mot</h2>
+      <p data-cfg="dialog.successBody">Votre réponse de démonstration est enregistrée sur cet appareil.</p>
+      <button class="submit" id="done" data-cfg="dialog.successDoneLabel">Revenir à l’invitation</button>
+    </div>
+  </dialog>
+
+  <!-- ======================================================================
+       AUDIO + CONTROLE DU SON
+       ====================================================================== -->
+  <audio id="wedding-music" src="assets/music-from-36.mp3" data-cfg-attr="src:assets.music"
+         preload="auto" loop></audio>
+  <button id="sound-toggle" class="sound-toggle"
+          aria-label="Activer la musique"
+          data-cfg-attr="aria-label:sound.ariaLabelOff"
+          aria-pressed="false" hidden>🔇</button>
+
+  <script src="js/config-inline.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

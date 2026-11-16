@@ -1,0 +1,26 @@
+# Normalisation des fins de ligne : LF dans le depot, CRLF au checkout Windows.
+* text=auto eol=lf
+
+# Fichiers binaires (ne jamais toucher)
+*.mp4 binary
+*.mp3 binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+
+# Polices : forcer LF (certaines polices ont des tables de checksum sensibles)
+*.woff  text eol=lf
+*.woff2 text eol=lf
+
+# CSS et JS : forcer LF
+*.css  text eol=lf
+*.js   text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.md   text eol=lf
+*.py   text eol=lf
+*.svg  text eol=lf
